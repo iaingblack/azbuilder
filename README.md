@@ -1,5 +1,10 @@
-# azgui
-Gui for creating resources with az cli
+# AZ Bui,der
+Webapp for creating resources with az cli. It will be a simple pick a resource and fill in the options. It can take quite a long time to figure out the required info for every resource when you want to quickly architect something. AZ CLI is a great way to do prototyping without needing to dive into powershell cmdlets (perhaps a nice alternative), ARM templates (ugh!), Ansible (okay for simple things), Terraform (high initial effort), etc...
+
+# Example
+
+This seems like a great example of what could be done. Python and Flask Backend, with HTMX to make adding 'resources' via HTML blocks (buttons, dropdowns, checkbox etc) and then I can generate the az cli command (somehow) from it. HTMX means I dont need React etc... I had no idea client side generation of a dynamic web 'GUI' like this without state could be so difficult (though I could be missing something).
+https://codecapsules.io/tutorial/building-a-full-stack-application-with-flask-and-htmx/
 
 
 ## Python Setup
