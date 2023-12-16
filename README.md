@@ -51,9 +51,13 @@ python3 manage.py runserver
 
 # Pages Required
 What do I need to be able to do?
+ - Set the location and RG name
+ - Add a resource
+ - Delete a Resource
+ - Edit a Resource (maybe too much)
+ - Generate a command line script from the choices
 
-
-
+It may be required that I make an object or a page per resource. That would suck. Ideally I want a way to make a generic object and have the values it can accept (required, optional, checkboxes for things), then generate a table of input fields based on that. 
 
 # Static Data
 

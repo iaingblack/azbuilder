@@ -1,3 +1,6 @@
+import string
+import random
+
 from flask import Flask, render_template
 from dominate.tags import *
 import json
@@ -17,16 +20,19 @@ def simple_locations(locations:list) -> list:
     return sorted(list(simple_locations_set))
 
 @app.route('/')
-def hello_world():  # put application's code here
+def root():  # put application's code here
     resources = ['rg','nsg','vnet']
     default_location = "northeurope"
     return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources, default_location=default_location)
 
-@app.route('/random', methods=['GET'])
-def random():
-    html = '<p>dfsdfsdfsdf</p>'
-    print(html)
-    return html
+@app.route('/resource/new')
+def resource_new_get():  # put application's code here
+    return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources, default_location=default_location)
+
+@app.route('/randomword', methods=['GET'])
+def randomword():
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(10))
 
 if __name__ == '__main__':
     # Get the available Azure Locations into a list
