@@ -10,7 +10,7 @@ locations = ["eastus", "eastus", "eastus2", "southcentralus", "westus2", "westus
              "australia", "brazil", "canada", "europe", "france", "germany", "global", "india", "japan", "korea",
              "norway", "singapore", "southafrica", "sweden", "switzerland", "uae", "uk", "unitedstates",
              "unitedstateseuap", "eastasiastage", "southeastasiastage", "brazilus", "eastusstg", "northcentralus",
-             "westus", "jioindiawest", "eastus2euap", "westcentralus", "southafricawest", "australiacentral",
+             "westus", "jioindiawest", "eastus2euap", "westcentraz account list-locations -o tablealus", "southafricawest", "australiacentral",
              "australiacentral2", "australiasoutheast", "japanwest", "jioindiacentral", "koreasouth", "southindia",
              "westindia", "canadaeast", "francesouth", "germanynorth", "norwaywest", "switzerlandwest", "ukwest",
              "uaecentral", "brazilsoutheast"]

@@ -6,4 +6,50 @@
 
 {% block content %}
     <p>Build AZ CLI Commands!</p>
+
+    <form action="#">
+        <label for="lang">Location</label>
+        <select name="location" id="lang">
+            {%for location in locations%}
+            <option value="{{location}}</td>">{{location}}</option>
+            {%endfor%}
+        </select>
+        <input type="submit" value="Submit" />
+    </form>
+
+    <form action="#">
+        <label for="lang">Resource</label>
+        <select name="resource" id="lang">
+            {%for resource in resources%}
+                <option value="{{resource}}</td>">{{resource}}</option>
+            {%endfor%}
+        </select>
+        <input type="submit" value="Submit" />
+    </form>
+
+    <form hx-post="/submit" hx-swap="beforeend" hx-target="#new-rg" class="mb-3">
+        <input type="tÏext" placeholder="Resource Group Name" name="rg-name" class="form-control mb-3" />
+        <input type="text" placeholder="Resource Group Location" name="rg-location" class="form-control mb-3" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Command</th>
+        </tr>
+        </thead>
+        <tbody id="new-book" hx-target="closest tr" hx-swap="outerHTML swap:0.5s">
+        {%for book in commands%}
+            <tr>
+                <td>{{book.Book.title}}</td>
+                <td>{{book.Author.name}}</td>
+                <td>
+                    <button hx-delete="/delete/{{book.Book.book_id}}" class="btn btn-primary">Delete</button>
+                </td>
+            </tr>
+        {%endfor%}
+        </tbody>
+    </table>
 {% endblock content %}
