@@ -4,9 +4,12 @@ Webapp for creating resources with az cli. It will be a simple pick a resource a
 # Example
 
 This seems like a great example of what could be done. Python and Flask Backend, with HTMX to make adding 'resources' via HTML blocks (buttons, dropdowns, checkbox etc) and then I can generate the az cli command (somehow) from it. HTMX means I dont need React etc... I had no idea client side generation of a dynamic web 'GUI' like this without state could be so difficult (though I could be missing something).
+Actually, it isnt as bad as I thought, you can do anything you like, but it forces a page reload. So I can do whatever I need without HTMX, but it isnt as 'nice'. I can still maintain state through the python variables being passed around.
 
 https://codecapsules.io/tutorial/building-a-full-stack-application-with-flask-and-htmx/
 
+Also good
+https://apostrophecms.com/blog/htmx-examples-and-how-to-use-it
 
 ## Python Setup
 
@@ -45,6 +48,11 @@ Start Server
 ```bash
 python3 manage.py runserver 
 ```
+
+# Pages Required
+What do I need to be able to do?
+
+
 
 
 # Static Data

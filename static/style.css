@@ -5,8 +5,11 @@
 body {
     font-family: sans-serif;
     font-size: 20px;
+    color: dimgrey;
     margin: 0 auto;
     text-align: center;
+    /*background: #1e1e1e;*/
+    background: #000000;
 }
 
 a,

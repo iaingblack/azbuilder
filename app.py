@@ -19,7 +19,14 @@ def simple_locations(locations:list) -> list:
 @app.route('/')
 def hello_world():  # put application's code here
     resources = ['rg','nsg','vnet']
-    return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources)
+    default_location = "northeurope"
+    return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources, default_location=default_location)
+
+@app.route('/random', methods=['GET'])
+def random():
+    html = '<p>dfsdfsdfsdf</p>'
+    print(html)
+    return html
 
 if __name__ == '__main__':
     # Get the available Azure Locations into a list

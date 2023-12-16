@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {#This is the part we need to load the HTMX library in the browser. We dont get for free from python (i'm a noob)#}
+    <script src="https://unpkg.com/htmx.org@1.9.9"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>AZ Builder - {% block title %}{% endblock title %}</title>
 </head>
 <body>
-<h1>AZ Builder</h1>
+<img src="static/logo.png" alt="AZ Builder">
+<hr>
 <section>
     <header>
         {% block header %}{% endblock header %}
