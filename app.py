@@ -7,6 +7,9 @@ import json
 
 app = Flask(__name__)
 
+# Resources we can create
+resources = ['vnet', 'nsg', 'pip']
+
 def json_locations():
     with open('./static/locations.json') as locations_file:
         file_contents = locations_file.read()
@@ -21,7 +24,6 @@ def simple_locations(locations:list) -> list:
 
 @app.route('/')
 def root():  # put application's code here
-    resources = ['rg','nsg','vnet']
     default_location = "northeurope"
     return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources, default_location=default_location)
 

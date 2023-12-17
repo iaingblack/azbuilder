@@ -36,11 +36,9 @@
         <input type="submit" value="Submit" />
     </form>
 
-{#    <form hx-post="/submit" hx-swap="beforeend" hx-target="#new-rg" class="mb-3">#}
-{#        <input type="tÏext" placeholder="Resource Group Name" name="rg-name" class="form-control mb-3" />#}
-{#        <input type="text" placeholder="Resource Group Location" name="rg-location" class="form-control mb-3" />#}
-{#        <button type="submit" class="btn btn-primary">Submit</button>#}
-{#    </form>#}
+    <hr>
+    {#    Added Commands#}
+    {% include 'pages/resources.html' %}
 
     <hr>
     <button hx-get="/randomword" hx-swap="innerHTML">Click Me</button>
