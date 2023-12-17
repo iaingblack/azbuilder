@@ -7,8 +7,13 @@ import json
 
 app = Flask(__name__)
 
+default_location = "northeurope"
 # Resources we can create
-resources = ['vnet', 'nsg', 'pip']
+resource_types = ['vnet', 'nsg', 'pip']
+# Required, Optional, Checkbox
+# resource_params = [
+#     ([],[],[])
+# ]
 
 def json_locations():
     with open('./static/locations.json') as locations_file:
@@ -24,17 +29,28 @@ def simple_locations(locations:list) -> list:
 
 @app.route('/')
 def root():  # put application's code here
-    default_location = "northeurope"
-    return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources, default_location=default_location)
+    return render_template("pages/home.html", locations=simple_locations(json_locations()), resource_types=resource_types, default_location=default_location)
 
 @app.route('/resource/new')
 def resource_new_get():  # put application's code here
-    return render_template("pages/home.html", locations=simple_locations(json_locations()), resources=resources, default_location=default_location)
+    return render_template("pages/home.html", locations=simple_locations(json_locations()), resource_types=resource_types, default_location=default_location)
 
 @app.route('/randomword', methods=['GET'])
 def randomword():
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(10))
+
+@app.route('/add_new_resource', methods=['GET'])
+def add_new_resource():
+    # letters = string.ascii_lowercase
+    # return ''.join(random.choice(letters) for i in range(10))
+    select = request.form.get('comp_select')
+    return(str(select)) # just to see what select is
+
+@app.route("/test" , methods=['GET', 'POST'])
+def test():
+    select = request.form.get('comp_select')
+    return(str(select)) # just to see what select is
 
 if __name__ == '__main__':
     # Get the available Azure Locations into a list
