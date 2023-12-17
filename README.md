@@ -11,6 +11,9 @@ https://codecapsules.io/tutorial/building-a-full-stack-application-with-flask-an
 Also good
 https://apostrophecms.com/blog/htmx-examples-and-how-to-use-it
 
+Also maybe look at flask-wtf for the forms
+https://www.youtube.com/watch?v=GbJPqu0ff9A
+
 ## Python Setup
 
 Just for my reference. How to setup a virtual env and test a build of the installer on windows.

@@ -27,7 +27,7 @@
     <hr>
 
     <br>
-    <form action="/add_new_resource" method="post">
+    <form action="/add_new_resource/{{resource_type}}" method="POST">
         <label for="resource_type">Resource</label>
         <select name="resource_type" id="resource_type">
             {%for resource_type in resource_types%}
@@ -45,19 +45,5 @@
     <button hx-get="/randomword" hx-swap="innerHTML">Click Me</button>
     <span hx-get="/randomword" hx-trigger="mouseenter">Hover Me!</span>
 
-    <hr>
-    <form class="form-inline" method="POST" action="{{ url_for('test') }}">
-        <div class="form-group">
-            <div class="input-group">
-                <span class="input-group-addon">Please select</span>
-                <select name="comp_select" class="selectpicker form-control">
-                    {% for o in data %}
-                        <option value="{{ o.name }}">{{ o.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <button type="submit" class="btn btn-default">Go</button>
-        </div>
-    </form>
 
 {% endblock content %}

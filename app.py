@@ -40,12 +40,13 @@ def randomword():
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(10))
 
-@app.route('/add_new_resource', methods=['GET'])
-def add_new_resource():
+# @app.route('/add_new_resource', methods=['GET'])
+@app.route('/add_new_resource/<resource_type>', methods=['GET', 'POST'])
+def add_new_resource(resource_type):
     # letters = string.ascii_lowercase
     # return ''.join(random.choice(letters) for i in range(10))
-    select = request.form.get('comp_select')
-    return(str(select)) # just to see what select is
+    select = request.form.get('resource_type')
+    return('{}'.format(resource_type))
 
 @app.route("/test" , methods=['GET', 'POST'])
 def test():
