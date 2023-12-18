@@ -1,0 +1,50 @@
+body {
+   background-color: darkslategray;
+   color: floralwhite;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1.25em;
+   padding: 2rem;
+}
+
+/* border and spacing around form */
+form {
+   border: solid thick white;
+   padding: 1rem;
+   margin: 1rem;
+}
+
+/* spacing before paragraphs and divisions */ 
+div, p {
+   margin-top: 1rem;
+}
+
+/* some internal spacing for inputs  */
+input{
+   padding-left:0.25rem;
+   padding-top: 0.25rem;
+}
+
+/* some alternating styling for options in a drop-down select */
+option:nth-child(even) {
+   background-color: #ccc;
+}
+
+option:nth-child(odd) {
+   background-color: #fff;
+}
+
+label{
+   display: inline-block;
+   width: 15em;
+}
+
+/* right justify numerical inputs */
+input[type="number"]{
+   text-align: right;
+}
+
+/* styling for error messages */
+.error{
+   background-color: darksalmon;
+   color: darkred;
+}

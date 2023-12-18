@@ -1,0 +1,35 @@
+{% extends "simple_layout.html" %}
+
+{% block title %} {{title}}  {% endblock title %}
+{% block header %} {{header}}  {% endblock header %}
+
+{% block content %} 
+<form action="" method="post">
+   {{ form.csrf_token }}
+   <div>
+      {{form.name.label}} 
+      {{form.name(size=30)}} 
+      <span class="error">{{ form.name.errors | join("|") }}</span>
+      <!-- if the browser handles the error you won't see anything here -->
+   </div>
+   <div>
+      {{form.language.label}} 
+      {{form.language}}
+   </div>
+   <div>
+      {{form.color.label}} 
+      {{form.color}}
+   </div>
+   <div>
+      {{form.hours.label}} 
+      {{form.hours}}
+   </div>
+   <div>
+      {{form.wage.label}} 
+      {{form.wage}}
+   </div>
+   <div>
+      {{form.submit()}}
+   </div>
+</form>
+{% endblock content %}

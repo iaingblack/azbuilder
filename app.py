@@ -2,10 +2,14 @@ import string
 import random
 
 from flask import Flask, render_template
+from wtforms import StringField
+from wtforms.validators import DataRequired
+
 from dominate.tags import *
 import json
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'super_secret_key'
 
 default_location = "northeurope"
 # Resources we can create
@@ -52,6 +56,17 @@ def add_new_resource(resource_type):
 def test():
     select = request.form.get('comp_select')
     return(str(select)) # just to see what select is
+
+# https://flask-wtf.readthedocs.io/en/1.2.x/quickstart/#
+class MyForm():
+    name = StringField('name', validators=[DataRequired()])
+
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    form = MyForm()
+    if form.validate_on_submit():
+        return redirect('/success')
+    return render_template('submit.html', form=form)
 
 if __name__ == '__main__':
     # Get the available Azure Locations into a list

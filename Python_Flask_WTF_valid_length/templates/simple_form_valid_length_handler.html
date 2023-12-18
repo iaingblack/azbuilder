@@ -1,0 +1,39 @@
+{% extends "simple_layout.html" %}
+
+{% block title %} {{title}}  {% endblock title %}
+{% block header %} {{header}}  {% endblock header %}
+
+{% block content %} 
+      Name: {{result["name"]}} <br />
+   </p>
+   <p>
+      Language: 
+      {{result["language"]}}
+   </p>
+   <p>
+      Color: 
+      {{result['color']}}<br />
+      <div style="background-color:{{result['color']}}">&nbsp;</div>
+    
+   </p>
+   <p>
+      Hours: 
+      {{result['hours']}}<br />
+   </p>
+   <p>
+      Wage: 
+      ${{ '%0.2f' % result['wage'] | float}}<br />
+   </p>
+   <p>
+      Salary: 
+      {% set h = result['hours'] | int  %}{# cast hours as integer #}
+      {% set w = result['wage'] | float %}{# cast wage as float #}
+      {% if h >40 %}
+         {% set s = 40*w+(h-40)*w*1.5 %}
+         ${{'%0.2f' % s|float}}
+      {% else %}
+         {% set s = h*w %}
+         ${{'%0.2f' % s|float}}
+      {% endif %}
+   </p>
+{% endblock content %}

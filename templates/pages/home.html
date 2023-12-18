@@ -38,6 +38,15 @@
     </form>
 
     <hr>
+    {% if form.name.errors %}
+        <ul class="errors">
+            {% for error in form.name.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <hr>
     {#    Added Commands#}
     {% include 'pages/resources.html' %}
 
